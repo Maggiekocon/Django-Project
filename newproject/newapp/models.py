@@ -11,7 +11,7 @@ class Car(models.Model):
     ]
 
     ROOF_TYPE=[
-         ('select_one', 'Select One'),
+        ('select_one', 'Select One'),
         ('solid','Solid'),
         ('sun_roof','Sun Roof'),
         ('convertable','Convertable'),
