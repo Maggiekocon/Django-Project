@@ -1,0 +1,15 @@
+{% extends "master.html" %}
+{% block stuff %} 
+    <div class="jumbotron" style = 'background-color:rgba(252, 227, 89, 0.541); color: navy; padding: 5%;'> 
+        <h1 class="display-4 text-center">Add Posts</h1>
+    </div>
+
+    <div class="container">
+        <form method="POST" class="jumbotron" style="padding: 2%; background-color:rgba(252, 227, 89, 0.541); margin-top: 10%; color: navy">
+            {% csrf_token %}
+            {{blogform}}
+            <input type="submit" class= " btn-primary" value="Submit"></input>
+        </form>
+
+    </div>    
+{% endblock %}

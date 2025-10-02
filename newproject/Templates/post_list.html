@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posts</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> 
-</head>
-<body>
+{% extends "master.html" %}
+{% block stuff %}    
     {% if post %}
         {% for i in post %}
         <div class="jumbotron" style="margin: 10%; background-color:rgba(252, 227, 89, 0.541); color: navy">
@@ -16,13 +9,15 @@
             <p>{{i.body}}</p>
             <div style="font-size: small; font-style:italic; margin-bottom:20px">Created at {{i.created_at}}</div>
             <div class="text-right">
-                <a class="btn btn-primary btn-lgn" style="background-color: goldenrod; border-color:rgb(215, 158, 14) ;" "#" role="button">See More</a>
             </div>
         </div>
         {% endfor %}
+        
     {% else %}
         <p>No posts available</p>
     {% endif %}
-</body>
-</html>
+{% endblock %}
+
+
+
 

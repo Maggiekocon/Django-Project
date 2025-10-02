@@ -1,0 +1,18 @@
+{% extends "master.html" %}
+{% block stuff %} 
+    {% if post %}
+        <div class="jumbotron" style="margin: 10%; background-color:rgba(252, 227, 89, 0.541); color: navy">
+            <h1 class="display-4">{{post.title}}</h1>
+            <p class="lead">By {{post.author}}</p>
+            <hr class="my-4">
+            <p>{{post.body}}</p>
+            <div style="font-size: small; font-style:italic; margin-bottom:20px">Created at {{post.created_at}}</div>
+            <div class="text-right">
+                <a href=" {% url 'updatepost' post.id %}  " class="btn btn-warning btn-lg" role="button" aria-pressed="true">Edit</a>
+                <a href=" {% url 'deletepost' post.id %} " class="btn btn-danger btn-lg" role="button" aria-pressed="true">Delete</a>
+            </div>
+        </div>
+    {% else %}
+        <p>No posts available</p>
+    {% endif %}
+{% endblock %}
