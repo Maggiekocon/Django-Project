@@ -9,6 +9,8 @@
             <p>{{i.body}}</p>
             <div style="font-size: small; font-style:italic; margin-bottom:20px">Created at {{i.created_at}}</div>
             <div class="text-right">
+                <a href=" {% url 'updatepost' i.id %}  " class="btn btn-warning btn-lg" role="button" aria-pressed="true">Edit</a>
+                <a href=" {% url 'deletepost' i.id %} " class="btn btn-danger btn-lg" role="button" aria-pressed="true">Delete</a>
             </div>
         </div>
         {% endfor %}
